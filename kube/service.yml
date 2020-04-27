@@ -6,10 +6,10 @@ metadata:
   labels:
     app: pypytest
 spec:
-  type: ClusterIP
+  selector:
+    app: pypytest
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: http
       name: http
-  selector:
-    app: pypytest
