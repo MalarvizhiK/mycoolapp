@@ -1,5 +1,4 @@
-#! /bin/bash
-set -e
+#!/bin/bash
 
 echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 

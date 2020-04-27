@@ -16,7 +16,7 @@ before_install:
 deploy:
   provider: script
   script: bash scripts/docker_push
-  script: bash scripts/deploy.sh
+ - script: bash scripts/deploy.sh
   on:
     branch: master
 
