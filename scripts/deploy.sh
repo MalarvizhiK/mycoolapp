@@ -2,7 +2,7 @@
 
 echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 
-kubectl \
+/bin/linux/amd64/kubectl \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
@@ -10,7 +10,7 @@ kubectl \
   apply -f ./kube/
 
 echo "The build number is ${TRAVIS_BUILD_NUMBER}"
-kubectl \
+/bin/linux/amd64/kubectl \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
