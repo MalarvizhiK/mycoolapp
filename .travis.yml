@@ -10,15 +10,11 @@ services:
 before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-before_script:
-  provider: script
-  script: bash script/build.sh
+  - script: bash scripts/build.sh
 
 deploy:
   provider: script
   script: bash scripts/docker_push
- - script: bash scripts/deploy.sh
   on:
     branch: master
 
