@@ -14,4 +14,4 @@ kubectl \
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
-  rollout restart deployment/pypytest
+  set image deployment/pypytest pypytest=onestoop/pypytest:${TRAVIS_BUILD_NUMBER} --record
