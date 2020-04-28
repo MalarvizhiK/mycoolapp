@@ -12,6 +12,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t onestoop/pypytest:$TRAVIS_BUILD_NUMBER .
   - docker push onestoop/pypytest
+  - script: bash sed 's/VERSION/$TRAVIS_BUILD_NUMBER/g' ./kube/deployment.yml > .kube/deployment.yml
 
 deploy:
   provider: script
