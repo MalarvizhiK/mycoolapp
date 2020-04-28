@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pypytest
-          image: onestoop/pypytest:17
+          image: onestoop/pypytest:VERSION
           ports:
             - containerPort: 80
               name: http
