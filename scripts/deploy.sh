@@ -8,3 +8,10 @@ kubectl \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
   apply -f ./kube/
+
+kubectl \
+  --kubeconfig=/dev/null \
+  --server=$KUBERNETES_SERVER \
+  --certificate-authority=cert.crt \
+  --token=$KUBERNETES_TOKEN \
+  rollout restart deployment/pypytest
