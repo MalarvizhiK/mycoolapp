@@ -1,5 +1,7 @@
 language: bash
 
+sudo: required
+
 branches:
   only:
   - master
@@ -8,7 +10,7 @@ services:
 - docker
 
 before_install:
-  - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+  - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt` && sudo mv kubectl /usr/local/bin/kubectl
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t onestoop/pypytest:$TRAVIS_BUILD_NUMBER .
   - docker push onestoop/pypytest
