@@ -15,10 +15,11 @@ before_install:
 
 script:
 - bash scripts/updateKube.sh
+- bash scripts/docker_push
 
 deploy:
   provider: script
-  script: bash scripts/docker_push
+  script: bash scripts/deploy.sh
   on:
     branch: master
 
