@@ -13,7 +13,7 @@ before_install:
 
 before_script:
   provider: script
-  script: bash script/build.py
+  script: bash script/build.sh
 
 deploy:
   provider: script
