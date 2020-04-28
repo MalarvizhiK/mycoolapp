@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pypytest
-          image: onestoop/pypytest:latest
+          image: onestoop/pypytest:$(TRAVIS_BUILD_NUMBER)
           ports:
             - containerPort: 80
               name: http
