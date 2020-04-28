@@ -18,7 +18,6 @@ before_install:
 
 script:
 - bash scripts/updateKube.sh
-- bash scripts/docker_push
 
 deploy:
   provider: script
