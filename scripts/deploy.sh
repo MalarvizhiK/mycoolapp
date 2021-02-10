@@ -15,4 +15,4 @@ echo "The build number is ${TRAVIS_BUILD_NUMBER}"
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
-  set image deployment/pypytest pypytest=onestoop/pypytest:${TRAVIS_BUILD_NUMBER} --record
+  set image deployment/pypytest pypytest=malark79/pypytest:${TRAVIS_BUILD_NUMBER} --record
