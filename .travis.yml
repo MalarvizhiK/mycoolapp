@@ -14,7 +14,7 @@ before_install:
   - chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
   - docker login -u="malark79" -p="m12vizhi"
   - docker build -t malark79/pypytest:$TRAVIS_BUILD_NUMBER .
-  - docker push onestoop/pypytest
+  - docker push malark79/pypytest
 
 script:
 - bash scripts/updateKube.sh
