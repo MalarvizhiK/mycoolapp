@@ -12,7 +12,7 @@ services:
 before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
   - chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
-  - docker login -u="malark79" -p="m12vizhi"
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
   - docker build -t malark79/pypytest:$TRAVIS_BUILD_NUMBER .
   - docker push malark79/pypytest
 
